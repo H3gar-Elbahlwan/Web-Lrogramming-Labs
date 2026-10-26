@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Product Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column; /* Mobile-first: stack items vertically */
+            gap: 15px;
+            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+        }
+        .product-image {
+            background-color: #3b82f6;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 180px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .product-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .product-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            color: #111827;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Larger Screens (640px and wider): switch to row layout */
+        @media (min-width: 640px) {
+            .product-card {
+                flex-direction: row;
+                align-items: center;
+            }
+            .product-image {
+                width: 40%;
+                height: 150px;
+            }
+            .product-content {
+                width: 60%;
+                padding-left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-card">
+        <div class="product-image">Product Image</div>
+        <div class="product-content">
+            <h2 class="product-title">Product Title</h2>
+            <p class="product-description">This is a brief description of the product. Use this lab to practice making the card responsive. On smaller screens, the content should stack. On wider screens, the image and content should be side-by-side.</p>
+        </div>
+    </div>
+
+</body>
+</html>
