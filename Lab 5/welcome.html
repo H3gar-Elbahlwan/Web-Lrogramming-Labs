@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Welcome Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #3b82f6;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="welcome-message">Hello!</h1>
+
+    <script>
+        // الحصول على الساعة الحالية (من 0 لـ 23)
+        const currentHour = new Date().getHours();
+        const heading = document.getElementById("welcome-message");
+
+        // تحديد الرسالة بناءً على الوقت
+        if (currentHour >= 5 && currentHour < 12) {
+            heading.textContent = "Good Morning!";
+        } else if (currentHour >= 12 && currentHour < 18) {
+            heading.textContent = "Good Afternoon!";
+        } else {
+            heading.textContent = "Good Evening!";
+        }
+    </script>
+
+</body>
+</html>

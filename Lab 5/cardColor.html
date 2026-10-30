@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Card Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+            transition: background-color 0.5s ease; /* تأثير انسيابي لتغيير اللون */
+        }
+        button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="my-card">
+        <h2>Interactive Card</h2>
+        <p>Click the button to change my background color!</p>
+        <button id="color-btn">Change Color</button>
+    </div>
+
+    <script>
+        // استخدام defer أو وضع السكريبت في النهاية عشان العناصر تكون اتحملت
+        const card = document.getElementById("my-card");
+        const button = document.getElementById("color-btn");
+
+        // قائمة ألوان عشوائية نختار منها
+        const colors = ["#dbeafe", "#fef3c7", "#d1fae5", "#fce7f3", "#ede9fe"];
+
+        button.addEventListener("click", function() {
+            // اختيار لون عشوائي من القائمة
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            card.style.backgroundColor = randomColor;
+        });
+    </script>
+
+</body>
+</html>
